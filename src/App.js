@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import Layout from './containers/Layout/Layout';
+import NowPlaying from './containers/NowPlaying/NowPlaying';
+import UpcomingMovies from './containers/UpcomingMovies/UpcomingMovies';
+import LatestMovies from './containers/LatestMovies/LatestMovies';
+import {Route , Switch, useLocation} from 'react-router-dom';
+import SearchMovie from './containers/SearchMovie/SearchMovie';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <Layout>
+            <Switch>
+              <Route path="/" exact component={NowPlaying}/>
+              <Route path="/UpcomingMovies" component={UpcomingMovies} />
+              <Route path="/LatestMovies" component={LatestMovies}/>
+              <Route path="/SearchMovies" component={SearchMovie}/>
+            </Switch>
+        </Layout>
+      </div>
+    );
+  }
 }
 
 export default App;

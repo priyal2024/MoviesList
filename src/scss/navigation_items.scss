@@ -1,0 +1,17 @@
+@import './variable.scss';
+
+.navigationItems{
+    margin-left: 20px;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    height: 100%;
+    font-size: 20px;
+}
+@media(min-width:500px){
+    .navigationItems{
+        flex-flow:row ;
+    }
+}

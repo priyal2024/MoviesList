@@ -1,0 +1,7 @@
+@import './variable.scss';
+
+.navContainer{
+    background-color: $navBarBackgroundColor;
+    display: flex;
+    align-items: center;
+}

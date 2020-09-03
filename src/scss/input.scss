@@ -1,0 +1,35 @@
+@import './variable.scss';
+
+.inputContainer{
+    position: absolute;
+    margin: auto;
+    right: 5%;
+
+    .inputControl{
+        width: 150px;
+        border-radius: 24px;
+        border: none;
+        padding: 6px;
+        height: 35px;
+        font-size: large;
+        font-weight: 700;
+        font-family: $inputValFontFamily;
+    }
+    input[type = text]{
+        padding: 6px 10px 6px 16px;
+    }
+   
+    .searchIcon{
+        margin-left: -35px;
+        cursor: pointer;
+    }
+}
+@media(min-width:500px){
+    .inputContainer{
+        flex-flow:row ;
+
+        .inputControl{
+            width: 300px;
+        }
+    }
+}

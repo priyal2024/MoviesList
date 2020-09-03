@@ -1,0 +1,44 @@
+@import './variable.scss';
+
+.navItem{
+    padding: 10px;
+    cursor: pointer;
+    font-family: $inputValFontFamily;
+}
+
+.navItem a{
+    text-decoration: none;
+    width: 100%;
+    display: block;
+    color: $fontColor;
+}
+
+.navItem a:hover, 
+.navItem a:active, 
+.navItem a.active {
+    color: $activeNavItemColor;
+}
+
+@media(min-width:500px){
+    .navItem{
+        margin: 0;
+        display: flex;
+        height: 100%;
+        width:auto; 
+        font-family: $inputValFontFamily;
+        align-items: center;
+    }
+    
+    .navItem a{
+        color: $fontColor;
+        height: 100%;
+        padding: 16px 10px;
+    }
+    
+    .navItem a:hover, 
+    .navItem a:active, 
+    .navItem a.active {
+        color: $activeNavItemColor;
+    }
+    
+}
