@@ -19,31 +19,23 @@ export default class LatestMovies extends React.Component {
             status: '',
             movieOriginalTitle: '',
             imdb_id: '',
-            budget: null,
         }
     }
     componentDidMount() {
-        fetch('https://api.themoviedb.org/3/movie/latest?api_key=50e5cb56b809b60eb512b21209bb4b53&language=en-US')
-            .then(async response => {
-                const data = await response.json();
-
-                // check for error response
-                if (!response.ok) {
-                    // get error message from body or default to response statusText
-                    const error = (data && data.message) || response.statusText;
-                    return Promise.reject(error);
-                }
-
+        fetch('https://api.themoviedb.org/3/movie/latest?api_key=50e5cb56b809b60eb512b21209bb4b53&language=en-US', {'Accept': 'application/json',
+        'Content-Type': 'application/json'})
+            .then(response => response.json())
+            .then(data => 
+            {
                 this.setState({
-                    moviePoster: data.poster_path,
-                    title: data.title,
-                    moviesOriginalLanguage: data.original_language,
-                    movieOverview: data.overview,
-                    status: data.status,
-                    movieOriginalTitle: data.original_title,
-                    imdb_id: data.imdb_id,
-                    budget: data.budget
-                });
+                        moviePoster: data.poster_path,
+                        title: data.title,
+                        moviesOriginalLanguage: data.original_language,
+                        movieOverview: data.overview,
+                        status: data.status,
+                        movieOriginalTitle: data.original_title,
+                        imdb_id: data.imdb_id,
+                    });
             })
             .catch(error => {
                 this.setState({ errorMessage: error.toString() });
@@ -58,7 +50,7 @@ export default class LatestMovies extends React.Component {
     }
 
     render() {
-        const { title, moviePoster, show, moviesOriginalLanguage, movieOverview, status, movieOriginalTitle, imdb_id, budget } = this.state;
+        const { title, moviePoster, show, moviesOriginalLanguage, movieOverview, status, movieOriginalTitle, imdb_id } = this.state;
 
         return (
             <div>

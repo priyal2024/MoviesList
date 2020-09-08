@@ -13,18 +13,8 @@ export default class NowPlaying extends React.Component {
     }
     componentDidMount() {
         fetch('https://api.themoviedb.org/3/movie/now_playing?api_key=50e5cb56b809b60eb512b21209bb4b53&language=en-US&page=1')
-            .then(async response => {
-                const data = await response.json();
-
-                // check for error response
-                if (!response.ok) {
-                    // get error message from body or default to response statusText
-                    const error = (data && data.message) || response.statusText;
-                    return Promise.reject(error);
-                }
-
-                this.getMovieData(data);
-            })
+            .then(response => response.json())
+            .then(data => this.getMovieData(data))
             .catch(error => {
                 this.setState({ errorMessage: error.toString() });
                 console.error('There was an error!', error);
@@ -33,10 +23,9 @@ export default class NowPlaying extends React.Component {
 
     getMovieData(movieData) {
         let data = this.state.movieContent;
-        data[0] = movieData.results[0];
-        data[1] = movieData.results[1];
-        data[2] = movieData.results[2];
-
+        for(let i=0; i<3; i++){
+            data.push(movieData.results[i]);
+        }
         this.setState({ movieContent: data });
     }
 

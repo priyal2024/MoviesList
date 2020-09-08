@@ -3,7 +3,7 @@ import Layout from './containers/Layout/Layout';
 import NowPlaying from './containers/NowPlaying/NowPlaying';
 import UpcomingMovies from './containers/UpcomingMovies/UpcomingMovies';
 import LatestMovies from './containers/LatestMovies/LatestMovies';
-import {Route , Switch, useLocation} from 'react-router-dom';
+import {Route , Switch} from 'react-router-dom';
 import SearchMovie from './containers/SearchMovie/SearchMovie';
 
 class App extends Component {

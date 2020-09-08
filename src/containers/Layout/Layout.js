@@ -5,7 +5,6 @@ import LatestMovies from '../LatestMovies/LatestMovies';
 import Navbar from '../../components/UI/Navigation/Navigation';
 import { useLocation } from 'react-router-dom';
 import SearchMovie from '../../containers/SearchMovie/SearchMovie';
-import Card from '../../components/UI/CardUI/CardUI';
 
 const Layout = () => {
     let location = useLocation();
