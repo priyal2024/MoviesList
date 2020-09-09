@@ -22,20 +22,21 @@ export default class LatestMovies extends React.Component {
         }
     }
     componentDidMount() {
-        fetch('https://api.themoviedb.org/3/movie/latest?api_key=50e5cb56b809b60eb512b21209bb4b53&language=en-US', {'Accept': 'application/json',
-        'Content-Type': 'application/json'})
+        fetch('https://api.themoviedb.org/3/movie/latest?api_key=50e5cb56b809b60eb512b21209bb4b53&language=en-US', {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        })
             .then(response => response.json())
-            .then(data => 
-            {
+            .then(data => {
                 this.setState({
-                        moviePoster: data.poster_path,
-                        title: data.title,
-                        moviesOriginalLanguage: data.original_language,
-                        movieOverview: data.overview,
-                        status: data.status,
-                        movieOriginalTitle: data.original_title,
-                        imdb_id: data.imdb_id,
-                    });
+                    moviePoster: data.poster_path,
+                    title: data.title,
+                    moviesOriginalLanguage: data.original_language,
+                    movieOverview: data.overview,
+                    status: data.status,
+                    movieOriginalTitle: data.original_title,
+                    imdb_id: data.imdb_id,
+                });
             })
             .catch(error => {
                 this.setState({ errorMessage: error.toString() });

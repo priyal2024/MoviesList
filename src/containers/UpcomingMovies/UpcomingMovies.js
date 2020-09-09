@@ -14,7 +14,7 @@ export default class UpcomingMovies extends React.Component {
     componentDidMount() {
         fetch('https://api.themoviedb.org/3/movie/upcoming?api_key=50e5cb56b809b60eb512b21209bb4b53&language=en-US&page=1')
             .then(response => response.json())
-            .then(data => { this.getMovieData(data);})
+            .then(data => { this.getMovieData(data); })
             .catch(error => {
                 this.setState({ errorMessage: error.toString() });
                 console.error('There was an error!', error);
@@ -23,7 +23,7 @@ export default class UpcomingMovies extends React.Component {
 
     getMovieData(movieData) {
         let data = this.state.movieContent;
-        for(let i=0; i<3; i++){
+        for (let i = 0; i < 3; i++) {
             data.push(movieData.results[i]);
         }
         this.setState({ movieContent: data });

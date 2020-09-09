@@ -23,7 +23,7 @@ export default class NowPlaying extends React.Component {
 
     getMovieData(movieData) {
         let data = this.state.movieContent;
-        for(let i=0; i<3; i++){
+        for (let i = 0; i < 3; i++) {
             data.push(movieData.results[i]);
         }
         this.setState({ movieContent: data });

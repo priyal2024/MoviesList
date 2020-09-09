@@ -9,22 +9,20 @@ import SearchMovie from '../../containers/SearchMovie/SearchMovie';
 const Layout = () => {
     let location = useLocation();
     let component = [];
-    if(location.pathname === '/')
-    {
-        component.push(<NowPlaying/>);
+    if (location.pathname === '/') {
+        component.push(<NowPlaying />);
     }
-    else if(location.pathname === '/UpcomingMovies')
-    {
-        component.push(<UpcomingMovies/>);
+    else if (location.pathname === '/UpcomingMovies') {
+        component.push(<UpcomingMovies />);
     }
-    else if(location.pathname === '/LatestMovies'){
-        component.push(<LatestMovies/>);
+    else if (location.pathname === '/LatestMovies') {
+        component.push(<LatestMovies />);
     }
-    else{
-        component.push(<SearchMovie/>);
+    else {
+        component.push(<SearchMovie />);
     }
-    
-    return(
+
+    return (
         <div>
             <Navbar />
             <div>{component}</div>

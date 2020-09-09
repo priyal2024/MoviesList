@@ -24,7 +24,7 @@ export default class SearchMovie extends React.Component {
     }
     componentDidMount() {
         fetch("https://api.themoviedb.org/3/find/" + this.state.searchMovieName + "?api_key=50e5cb56b809b60eb512b21209bb4b53&language=en-US&external_source=imdb_id")
-            .then(response =>  response.json())
+            .then(response => response.json())
             .then(data => {
                 this.setState({
                     moviePoster: data.poster_path,

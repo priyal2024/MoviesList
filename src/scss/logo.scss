@@ -2,5 +2,12 @@
 
 .logoContainer{
     margin-left: 20px;
+    // float: left;
     font-family: $logoFontFamily;
+}
+
+@media(max-width:900px){
+    .logoContainer{
+        text-align: center;
+    }
 }

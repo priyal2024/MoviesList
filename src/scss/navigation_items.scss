@@ -2,16 +2,16 @@
 
 .navigationItems{
     margin-left: 20px;
-    padding: 0;
+    padding: 16px;
     list-style: none;
     display: flex;
-    flex-flow: column;
+    flex-flow: row;
     align-items: center;
     height: 100%;
     font-size: 20px;
 }
-@media(min-width:500px){
+@media(max-width:900px){
     .navigationItems{
-        flex-flow:row ;
+        flex-flow: column;
     }
 }
